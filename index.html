@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HealthCare Connect – NGO Support Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">✚</span>
+      <span class="brand-name">HealthCare Connect</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#chatbot">AI Help</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">Non-Profit Healthcare Initiative</p>
+      <h1 class="hero-title">Connecting Communities<br/>to <span class="accent">Better Health</span></h1>
+      <p class="hero-subtitle">Register as a patient or volunteer, get instant AI-powered answers, and be part of a healthier tomorrow.</p>
+      <div class="hero-buttons">
+        <a href="#register" class="btn btn-primary">Get Support</a>
+        <a href="#chatbot" class="btn btn-outline">Ask AI Assistant</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">12,400+</span><span class="stat-label">Patients Helped</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">850+</span><span class="stat-label">Volunteers</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">38</span><span class="stat-label">Districts Covered</span></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="card-float card-float-1">
+        <span>🩺</span> Doctor Consultation
+      </div>
+      <div class="card-float card-float-2">
+        <span>💊</span> Free Medicines
+      </div>
+      <div class="card-float card-float-3">
+        <span>🏥</span> 24/7 Support
+      </div>
+      <div class="hero-circle">
+        <div class="inner-circle">
+          <p class="circle-text">Serving<br/>Since<br/>2018</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section class="form-section" id="register">
+    <div class="section-header">
+      <p class="section-tag">Join Us</p>
+      <h2>Register for Support or<br/>Become a Volunteer</h2>
+      <p class="section-sub">Fill in your details and our team will get in touch within 24 hours.</p>
+    </div>
+
+    <div class="form-tabs">
+      <button class="tab-btn active" onclick="switchTab('patient')">🧑‍⚕️ Patient Support</button>
+      <button class="tab-btn" onclick="switchTab('volunteer')">🤝 Volunteer</button>
+    </div>
+
+    <!-- Patient Form -->
+    <form id="patientForm" class="reg-form active-form" onsubmit="handleSubmit(event, 'patient')">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Arjun Sharma" required />
+        </div>
+        <div class="form-group">
+          <label>Age *</label>
+          <input type="number" placeholder="34" min="1" max="120" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="+91 98765 43210" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="arjun@example.com" />
+        </div>
+        <div class="form-group full-width">
+          <label>District / Location *</label>
+          <input type="text" placeholder="e.g. Bengaluru, Karnataka" required />
+        </div>
+        <div class="form-group full-width">
+          <label>Medical Concern / Condition</label>
+          <textarea rows="3" placeholder="Briefly describe your health concern..."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label>Type of Support Needed *</label>
+          <select required>
+            <option value="">-- Select --</option>
+            <option>Free Medical Consultation</option>
+            <option>Medicine Assistance</option>
+            <option>Mental Health Support</option>
+            <option>Home Visit Request</option>
+            <option>Ambulance / Emergency</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-submit">Submit Request ✦</button>
+    </form>
+
+    <!-- Volunteer Form -->
+    <form id="volunteerForm" class="reg-form" onsubmit="handleSubmit(event, 'volunteer')" style="display:none">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Priya Mehta" required />
+        </div>
+        <div class="form-group">
+          <label>Profession *</label>
+          <input type="text" placeholder="Doctor / Nurse / Student..." required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="+91 99887 76655" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="priya@example.com" required />
+        </div>
+        <div class="form-group full-width">
+          <label>City / District *</label>
+          <input type="text" placeholder="e.g. Mysuru, Karnataka" required />
+        </div>
+        <div class="form-group full-width">
+          <label>Availability</label>
+          <select>
+            <option>Weekends Only</option>
+            <option>Weekdays Only</option>
+            <option>Full Time</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Why do you want to volunteer?</label>
+          <textarea rows="3" placeholder="Share your motivation..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-submit">Register as Volunteer ✦</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMsg" class="success-msg" style="display:none">
+      <div class="success-icon">✅</div>
+      <h3>Thank You!</h3>
+      <p id="successText"></p>
+      <button class="btn btn-outline" onclick="resetForm()">Submit Another</button>
+    </div>
+  </section>
+
+  <!-- AI CHATBOT -->
+  <section class="chatbot-section" id="chatbot">
+    <div class="section-header light">
+      <p class="section-tag">AI-Powered</p>
+      <h2>Ask Our Health Assistant</h2>
+      <p class="section-sub">Get instant answers to common health and support questions, powered by AI.</p>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="chat-avatar">✚</div>
+        <div>
+          <strong>HealthBot</strong>
+          <p class="chat-status">🟢 Online – Powered by AI</p>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg bot-msg">
+          <div class="msg-bubble">
+            👋 Hi! I'm HealthBot, your AI health assistant. I can help you with:<br/><br/>
+            • How to register for support<br/>
+            • Types of services we offer<br/>
+            • General health FAQs<br/>
+            • Volunteer information<br/><br/>
+            What would you like to know?
+          </div>
+        </div>
+        <div class="quick-replies" id="quickReplies">
+          <button class="quick-btn" onclick="sendQuick('What services do you offer?')">What services do you offer?</button>
+          <button class="quick-btn" onclick="sendQuick('How do I register as a patient?')">How to register?</button>
+          <button class="quick-btn" onclick="sendQuick('How can I volunteer?')">How to volunteer?</button>
+          <button class="quick-btn" onclick="sendQuick('Is this service free?')">Is it free?</button>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="userInput" class="chat-input" placeholder="Type your question here..." onkeydown="if(event.key==='Enter') sendMessage()" />
+        <button class="send-btn" onclick="sendMessage()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="section-header">
+      <p class="section-tag">Reach Us</p>
+      <h2>Contact Our Team</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <h4>Address</h4>
+        <p>123, Health Nagar, Koramangala,<br/>Bengaluru – 560034, Karnataka</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h4>Helpline</h4>
+        <p>+91 80 1234 5678<br/>Mon – Sat, 9AM – 6PM</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h4>Email</h4>
+        <p>support@healthcareconnect.org<br/>volunteers@healthcareconnect.org</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">✚</span> HealthCare Connect
+      </div>
+      <p>A non-profit initiative dedicated to accessible, compassionate healthcare for all.</p>
+      <p class="footer-copy">© 2026 HealthCare Connect NGO. Built with ❤️ for the community.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
