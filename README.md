@@ -79,16 +79,6 @@ healthcare-connect/
 
 ---
 
-## 🌍 Deploying to Vercel (Free, Recommended)
-
-1. Go to [vercel.com](https://vercel.com) and create a free account
-2. Click **"Add New Project"**
-3. Drag and drop your project folder, or connect your GitHub repo
-4. Click **Deploy**
-5. Your live URL will be ready in ~30 seconds!
-
----
-
 ## 💡 Future Enhancements
 
 - WhatsApp chatbot integration via Twilio
