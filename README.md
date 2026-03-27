@@ -4,12 +4,6 @@ A clean, responsive web app designed for a non-profit healthcare NGO to manage p
 
 ---
 
-## 🌐 Live Demo
-[https://healthcare-connect.vercel.app](https://healthcare-connect.vercel.app)  
-*(Update this link after deploying)*
-
----
-
 ## 📁 Project Structure
 
 ```
